@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { UserService } from './shared/services/user-service.service';
 
 @Component({
   selector: 'fb-root',
@@ -8,6 +9,12 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'friends-book';
+export class AppComponent implements OnInit {
+
+  userService = inject(UserService);
+
+  ngOnInit(): void {
+    this.userService.getUsersList().subscribe(data => console.log(data));
+  }
+  
 }

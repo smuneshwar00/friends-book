@@ -1,4 +1,7 @@
 # FriendsBook
+basic copy of facebook application
+
+Problem Statement: Build an online friends book web application using Angular 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
 
@@ -25,3 +28,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+===================================================================================================================
+
+1. User backend APIs to be called from 'json-server'.
+    npm install json-server --save-dev ->add json-server package to run in dev env
+    db/data.json to hold all json data
+    to mock API calls, in package.json, define "dev:api" : "json-server ./db/data.json --port=5501"
+    npm run dev:api -> to run json-server on local
