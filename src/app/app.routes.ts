@@ -1,3 +1,25 @@
 import { Routes } from '@angular/router';
+import { RegistrationPageComponent } from './components/forms/registration-page/registration-page.component';
+import { LoginPageComponent } from './components/forms/login-page/login-page.component';
+import { ForgotPasswordPageComponent } from './components/forms/forgot-password-page/forgot-password-page.component';
+import { ResetPasswordPageComponent } from './components/forms/reset-password-page/reset-password-page.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    {
+        path: "register",
+        component: RegistrationPageComponent
+    },
+    {
+        path: "login",
+        component: LoginPageComponent
+    },
+    {
+        path: "forgot-password",
+        component: ForgotPasswordPageComponent
+    },
+    {
+        path: "reset-password",
+        component: ResetPasswordPageComponent
+    }
+];
