@@ -17,3 +17,7 @@
     justify-content: space-between;
     padding: .5rem;
   }
+
+  .loginDirect{
+    background-color: #1c13bbd3;
+  }
