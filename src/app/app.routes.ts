@@ -3,9 +3,13 @@ import { RegistrationPageComponent } from './components/forms/registration-page/
 import { LoginPageComponent } from './components/forms/login-page/login-page.component';
 import { ForgotPasswordPageComponent } from './components/forms/forgot-password-page/forgot-password-page.component';
 import { ResetPasswordPageComponent } from './components/forms/reset-password-page/reset-password-page.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { 
+        path: '', 
+        redirectTo: '/login', 
+        pathMatch: 'full' },
     {
         path: "register",
         component: RegistrationPageComponent
@@ -21,5 +25,9 @@ export const routes: Routes = [
     {
         path: "reset-password",
         component: ResetPasswordPageComponent
+    },
+    {
+        path: "**",
+        component: PageNotFoundComponent
     }
 ];

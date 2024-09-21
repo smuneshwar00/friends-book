@@ -9,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class ForgotPasswordPageComponent {
 
+  router ='';
+
+  onSubmit(){
+    console.log('Forward to Reset Password...')
+    //verify user logic
+    
+  }
+
 }

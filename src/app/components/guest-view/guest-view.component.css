@@ -19,17 +19,12 @@
     text-decoration: none;
     padding: 0.5rem 1rem;
   }
+  .navbar-brand:hover {
+    background-color: rgb(139, 139, 238) !important;
+  }
   .navbar a:hover {
     background-color: #555;
   }
-
   .active-route {
     background-color: #555;
   }
-
-  /* .guest-body {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-  } */
