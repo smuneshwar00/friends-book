@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'fb-forgot-password-page',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './forgot-password-page.component.html',
   styleUrl: './forgot-password-page.component.css'
 })

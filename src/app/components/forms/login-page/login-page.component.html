@@ -1,20 +1,25 @@
 <div class="login-container">
-    <div class="login-box">
-      <h2 class="text-center">Login</h2>
-      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
-        <div class="form-group mt-2">
-          <label for="username">Username</label>
-          <input type="text" class="form-control" name="username" placeholder="Enter username" ngModel required>
-        </div>
-        <div class="form-group mt-2">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" placeholder="Enter password" ngModel required>
-        </div>
-        
-        <div class="spaced-elements  mt-2">
-            <a routerLink="/forgot-password">Forgot Password</a>
-            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
-          </div>
-      </form>
-    </div>
+  <div class="login-box">
+    <h2 class="text-center">Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <div class="form-group mt-2">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" placeholder="Enter username" ngModel required>
+      </div>
+      <div class="form-group mt-2">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Enter password" ngModel required>
+      </div>
+
+      <div class="spaced-elements mt-2">
+        <a routerLink="/forgot-password">Forgot Password</a>
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+      </div>
+      <div>
+        <p>New?
+          <a routerLink="/register" routerLinkActive="active-route">Register Now!</a>
+        </p>
+      </div>
+    </form>
   </div>
+</div>
