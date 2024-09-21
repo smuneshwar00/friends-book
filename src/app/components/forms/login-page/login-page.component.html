@@ -1,19 +1,19 @@
 <div class="login-container">
     <div class="login-box">
       <h2 class="text-center">Login</h2>
-      <form>
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
         <div class="form-group mt-2">
           <label for="username">Username</label>
-          <input type="text" class="form-control" name="username" placeholder="Enter username">
+          <input type="text" class="form-control" name="username" placeholder="Enter username" ngModel required>
         </div>
         <div class="form-group mt-2">
           <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" placeholder="Enter password">
+          <input type="password" class="form-control" name="password" placeholder="Enter password" ngModel required>
         </div>
         
         <div class="spaced-elements  mt-2">
             <a routerLink="/forgot-password">Forgot Password</a>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
           </div>
       </form>
     </div>

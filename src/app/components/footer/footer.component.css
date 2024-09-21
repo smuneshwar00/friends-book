@@ -1,0 +1,21 @@
+.app-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #6b97dc;
+}
+
+li {
+    float: left;
+    list-style: none;
+    /* Removes bullet points */
+    padding: 5px;
+    /* Adds space around items */
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
