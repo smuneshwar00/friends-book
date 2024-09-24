@@ -43,14 +43,13 @@ export class RegistrationPageComponent implements OnInit{
       console.log('Form Submitted');
       console.log(this.registrationForm.value);
 
-      const hashedPassword = this._authService.hashPassword(this.registrationForm.value.password);
+      //const hashedPassword = this._authService.hashPassword(this.registrationForm.value.password);
 
       const newUser: User = {
         isAdmin: false,
         isActive: true,
         //_id: uuidv4(), // Generates a unique ID for each registration
         ...this.registrationForm.value,
-        password: hashedPassword,
         photoId: this.defaultPic,
         createdDate: new Date().toISOString()
       };

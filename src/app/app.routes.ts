@@ -4,6 +4,7 @@ import { LoginPageComponent } from './components/forms/login-page/login-page.com
 import { ForgotPasswordPageComponent } from './components/forms/forgot-password-page/forgot-password-page.component';
 import { ResetPasswordPageComponent } from './components/forms/reset-password-page/reset-password-page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { HomeComponent } from './components/loggedView/home/home.component';
 
 export const routes: Routes = [
     { 
@@ -25,6 +26,10 @@ export const routes: Routes = [
     {
         path: "reset-password",
         component: ResetPasswordPageComponent
+    },
+    {
+        path: "home",
+        component: HomeComponent
     },
     {
         path: "**",

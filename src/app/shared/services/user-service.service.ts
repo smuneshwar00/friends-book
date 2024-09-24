@@ -10,10 +10,21 @@ export class UserService {
 
   _http = inject(HttpClient);
 
+  loggedUser: User | null = null;
+
   constructor() { }
 
   getUsersList(): Observable<any> {
     return this._http.get<any>('http://localhost:5501/users').pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  getUrl = 'http://localhost:5501/users?email=';
+  getUser(email: string): Observable<any> {
+    //this.getUrl+=email;
+    //console.log(this.getUrl)
+    return this._http.get<any>(this.getUrl+email).pipe(
       catchError(this.handleError)
     );
   }
