@@ -1,4 +1,7 @@
-.app-footer {
+.container-fluid {
+    padding: 0;
+  }
+  .app-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;

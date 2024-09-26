@@ -45,10 +45,8 @@ export class LoginPageComponent implements OnInit{
           console.log('response.password -> '+ response[0])
           
           if(this._authService.verifyPassword(form.value.password, response[0].password)){
-            const token = this._authService.generateToken({ email: response[0].email});
-            console.log('JWT Token:', token);
+            this._authService.login('1234.jwt.token'); //hard-coded on purpose
             this._userService.loggedUser = response[0];
-            localStorage.setItem('token', token);
             this._router.navigate(['/home']);
           }else{
             this._userService.loggedUser = null;

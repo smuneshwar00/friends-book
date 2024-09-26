@@ -1,0 +1,32 @@
+<!-- <fb-guest-view *ngIf="isLoggedIn"></fb-guest-view> -->
+<!-- <fb-guest-view *ngIf="showHeader2"></fb-guest-view> -->
+
+<div class="container-fluid">
+    <div>
+        <nav class="navbar">
+            <div *ngIf="_authService.isLoggedIn(); else guestHeader">
+                <!-- Logged-in user header -->
+                <a class="home-navbar" routerLink="/home" class="navbar-brand">FBOOK</a>
+
+                <ul>
+                    <li><a routerLink="/home" routerLinkActive="active-route">Home</a></li>
+                    <li><a routerLink="/home" routerLinkActive="active-route">Network</a></li>
+                    <li><a routerLink="/home" routerLinkActive="active-route">Friends</a></li>
+                    <li><a routerLink="/home" routerLinkActive="active-route">Settings</a></li>
+                    <li><a routerLink="/login" routerLinkActive="active-route">Logout</a></li>
+                </ul>
+            </div>
+
+
+            <ng-template #guestHeader>
+                <!-- Guest user header -->
+                <a routerLink="/login" class="navbar-brand">FBOOK</a>
+
+                <ul>
+                    <li><a routerLink="/register" routerLinkActive="active-route">Register</a></li>
+                    <li><a routerLink="/login" routerLinkActive="active-route">Login</a></li>
+                </ul>
+            </ng-template>
+        </nav>
+    </div>
+</div>

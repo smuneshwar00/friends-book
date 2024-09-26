@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 //import * as bcrypt from 'bcryptjs';
 //import * as jwt from 'jsonwebtoken';
 
@@ -11,11 +12,27 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  private saltRounds = 10;
+  private loggedIn = false;
+
+  constructor() { }
+
+  isLoggedIn() {
+    return localStorage.getItem('token')!==null;
+  }
+
+  login(token: string) {
+    localStorage.setItem('token', token);
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+  }
+
+  //private saltRounds = 10;
 
   // private secretKey = 'my-fb-app-secret-key';
 
-  constructor() { }
+  
 
   // hashPassword(password: string): string { used to encrypt the passwords
   //   return bcrypt.hashSync(password, this.saltRounds);
@@ -35,8 +52,8 @@ export class AuthService {
 
 
 
-  generateToken(payload: any): string { //used to generate actual JWT with secret-key and payload
-    //return jwt.sign(payload, this.secretKey, { expiresIn: '1h' });
-    return "1234.jwt.token";
-  }
+  // generateToken(payload: any): string { //used to generate actual JWT with secret-key and payload
+  //   //return jwt.sign(payload, this.secretKey, { expiresIn: '1h' });
+  //   return "1234.jwt.token";
+  // }
 }

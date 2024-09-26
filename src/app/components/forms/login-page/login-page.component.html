@@ -17,12 +17,13 @@
       <div class="spaced-elements mt-2">
         <a routerLink="/forgot-password">Forgot Password</a>
         <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
-        <div class="text-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+        
       </div>
-      <div>
+      <div *ngIf="errorMessage">
+        <div class="text-danger" >{{errorMessage}}</div>
         <p>New?
           <a routerLink="/register" routerLinkActive="active-route">Register Now!</a>
-        </p>
+        </p>        
       </div>
     </form>
   </div>

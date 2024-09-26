@@ -4,7 +4,8 @@ import { LoginPageComponent } from './components/forms/login-page/login-page.com
 import { ForgotPasswordPageComponent } from './components/forms/forgot-password-page/forgot-password-page.component';
 import { ResetPasswordPageComponent } from './components/forms/reset-password-page/reset-password-page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { HomeComponent } from './components/loggedView/home/home.component';
+import { HomeComponent } from './components/home/home.component';
+import { authGuard } from './shared/guards/auth.guard';
 
 export const routes: Routes = [
     { 
@@ -29,7 +30,8 @@ export const routes: Routes = [
     },
     {
         path: "home",
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [authGuard]
     },
     {
         path: "**",
