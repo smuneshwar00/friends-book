@@ -8,5 +8,7 @@ export interface User {
     dob: string,
     password: string,
     photoId: string,
-    createdDate: string
+    createdDate: string,
+    friends: [],
+    posts: string[]
 }

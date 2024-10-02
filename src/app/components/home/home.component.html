@@ -1,1 +1,36 @@
-<p>home works!</p>
+<div class="container-fluid">
+    <div class="row">
+      <!-- <div class="col-4 d-flex flex-column justify-content-center align-items-center bg-lightblue h-50">
+        <h2>User Profile</h2>
+        <img src="https://via.placeholder.com/150" alt="User Profile Picture" class="img-fluid rounded-circle">
+        <p>Name: John Doe</p>
+      </div> -->
+      <div class="col-4 d-flex flex-column justify-content-center align-items-center bg-lightblue">
+        <div class="user-info d-flex flex-column justify-content-center align-items-center">
+            <h2>{{mainUser?.firstname}} {{mainUser?.lastname}}</h2>
+        <img src="data:image/jpeg;base64,{{mainUser?.photoId}}" alt="User Profile Picture" class="img-fluid rounded-circle">
+        <div class="mt-4">
+          <p>XX Connections</p>
+          <p>XX Posts</p></div>
+        </div>
+        
+      </div>
+      <div class="col-8 d-flex flex-column">
+        <div class="row flex-grow-1 new-post">
+          <div class="bg-lightgreen d-flex flex-column justify-content-center align-items-center form-inline">
+            <!-- <h3>Top Section</h3> -->
+            <!-- <p>Dummy data for the top section.</p> -->
+             <input type="text" class="form-control mr-2" placeholder="Enter text">
+             <button type="button" class="btn btn-primary">Post</button>
+          </div>
+        </div>
+        <div class="row flex-grow-1">
+          <div class="col-12 bg-lightcoral d-flex flex-column align-items-center">
+            <h3>Bottom Section</h3>
+            <p>Dummy data for the bottom section.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -5,6 +5,7 @@ import { UserService } from '../../../shared/services/user-service.service';
 import { AuthService } from '../../../shared/services/auth.service';
 import { User } from '../../../shared/model/user';
 import { CommonModule } from '@angular/common';
+import { EncryptService } from '../../../shared/services/encrypt.service';
 
 @Component({
   selector: 'fb-login-page',
@@ -18,6 +19,7 @@ export class LoginPageComponent implements OnInit{
   _userService = inject(UserService)
   _authService = inject(AuthService)
   _router = inject(Router)
+  _encryptService = inject(EncryptService)
 
   errorMessage: string | null = null;
 
@@ -45,7 +47,10 @@ export class LoginPageComponent implements OnInit{
           console.log('response.password -> '+ response[0])
           
           if(this._authService.verifyPassword(form.value.password, response[0].password)){
-            this._authService.login('1234.jwt.token'); //hard-coded on purpose
+            //store encoded data in local storage
+            const { email, age } = response[0];
+            const encodedUser = this._encryptService.encrypt(response[0]);
+            this._authService.login(encodedUser); //hard-coded on purpose
             this._userService.loggedUser = response[0];
             this._router.navigate(['/home']);
           }else{

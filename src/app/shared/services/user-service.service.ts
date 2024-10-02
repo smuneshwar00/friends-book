@@ -10,7 +10,7 @@ export class UserService {
 
   _http = inject(HttpClient);
 
-  loggedUser: User | null = null;
+  loggedUser!: User | null;
 
   constructor() { }
 

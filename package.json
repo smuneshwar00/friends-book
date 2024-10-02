@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently \"ng serve\" \"npm run dev:api\"",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -32,6 +32,7 @@
     "@types/bcryptjs": "^2.4.6",
     "@types/jasmine": "~5.1.0",
     "@types/uuid": "^10.0.0",
+    "concurrently": "^9.0.1",
     "jasmine-core": "~5.1.0",
     "json-server": "^1.0.0-beta.2",
     "karma": "~6.4.0",

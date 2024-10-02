@@ -37,3 +37,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     db/data.json to hold all json data
     to mock API calls, in package.json, define "dev:api" : "json-server ./db/data.json --port=5501"
     npm run dev:api -> to run json-server on local
+
+
+2. npm install concurrently --save-dev   => To run both ng serve and running json-server in one go, one command.
+
+3. npm run start ==> to start both UI and backend at once.
