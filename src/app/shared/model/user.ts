@@ -2,8 +2,8 @@ export interface User {
 
     isAdmin: boolean,
     isActive: boolean,
-    firstname: string,
-    lastname: string,
+    firstName: string,
+    lastName: string,
     email: string,
     dob: string,
     password: string,

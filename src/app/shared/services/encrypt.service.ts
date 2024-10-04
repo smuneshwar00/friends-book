@@ -12,8 +12,11 @@ export class EncryptService {
     return btoa(jsonString);
   }
 
-  decrypt(ciphertext: string): any {
-    const jsonString = atob(ciphertext);
+  decrypt(ciphertext: string | null ): any {
+    if(ciphertext){
+      const jsonString = atob(ciphertext);
     return JSON.parse(jsonString);
+    }
+    return null;
   }
 }

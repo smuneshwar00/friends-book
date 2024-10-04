@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
-import { GuestViewComponent } from "../guest-view/guest-view.component";
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { Router, NavigationEnd, RouterModule } from '@angular/router';
@@ -8,7 +7,7 @@ import { Router, NavigationEnd, RouterModule } from '@angular/router';
 @Component({
   selector: 'fb-header',
   standalone: true,
-  imports: [GuestViewComponent, CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

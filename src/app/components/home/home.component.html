@@ -7,11 +7,11 @@
       </div> -->
       <div class="col-4 d-flex flex-column justify-content-center align-items-center bg-lightblue">
         <div class="user-info d-flex flex-column justify-content-center align-items-center">
-            <h2>{{mainUser?.firstname}} {{mainUser?.lastname}}</h2>
-        <img src="data:image/jpeg;base64,{{mainUser?.photoId}}" alt="User Profile Picture" class="img-fluid rounded-circle">
+            <h2>{{_userService.loggedUser?.firstName}} {{_userService.loggedUser?.lastName}}</h2>
+        <img src="data:image/jpeg;base64,{{_userService.loggedUser?.photoId}}" alt="User Profile Picture" class="img-fluid rounded-circle">
         <div class="mt-4">
-          <p>XX Connections</p>
-          <p>XX Posts</p></div>
+          <p>{{_userService.loggedUser?.friends?.length}} Connections</p>
+          <p>{{_userService.loggedUser?.posts?.length}} Posts</p></div>
         </div>
         
       </div>

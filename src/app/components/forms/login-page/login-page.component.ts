@@ -48,9 +48,10 @@ export class LoginPageComponent implements OnInit{
           
           if(this._authService.verifyPassword(form.value.password, response[0].password)){
             //store encoded data in local storage
-            const { email, age } = response[0];
-            const encodedUser = this._encryptService.encrypt(response[0]);
-            this._authService.login(encodedUser); //hard-coded on purpose
+            const { email, posts, friends } = response[0];
+            console.log('what are we keeping in localstorage ', { email, posts, friends } )
+            const encryptedDetails = this._encryptService.encrypt( { email, posts, friends } );
+            this._authService.login(encryptedDetails); //hard-coded on purpose
             this._userService.loggedUser = response[0];
             this._router.navigate(['/home']);
           }else{

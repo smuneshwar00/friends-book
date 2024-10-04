@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { User } from '../model/user';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,8 +24,12 @@ export class UserService {
   getUser(email: string): Observable<any> {
     //this.getUrl+=email;
     //console.log(this.getUrl)
+    // return this._http.get<any>(this.getUrl+email).pipe(
+    //   catchError(this.handleError)
+    // );
+
     return this._http.get<any>(this.getUrl+email).pipe(
-      catchError(this.handleError)
+      map(data => data as unknown as User)
     );
   }
 
